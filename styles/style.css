@@ -201,8 +201,8 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1; transform: translateX(-5px);}
-.brand-text b { font-weight: bolder; font-family: 'Montserrat', sans-serif ; font-size: 1.5rem; letter-spacing: .02em; }
-.brand-text small { font-weight: bolder; font-family: 'Montserrat', sans-serif ; font-size: 1.5rem; color: var(--blue); letter-spacing: .02em; margin-top: 1px; }
+.brand-text b { font-weight: bolder; font-family: 'Montserrat', sans-serif ; font-size: 1.2rem; letter-spacing: .02em; }
+.brand-text small { font-weight: bolder; font-family: 'Montserrat', sans-serif ; font-size: 1.2rem; color: var(--blue); letter-spacing: .02em; margin-top: 1px; }
 
 .desktop-nav {
   display: flex;
