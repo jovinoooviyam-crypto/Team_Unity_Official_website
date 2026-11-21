@@ -1,9 +1,26 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+    <!-- Homepage -->
     <url>
         <loc>https://teamunity62.vercel.app/</loc>
+    </url>
+
+    <!-- Projects -->
+    <url>
+        <loc>https://teamunity62.vercel.app/projects.html</loc>
+    </url>
+
+    <!-- Works -->
+    <url>
+        <loc>https://teamunity62.vercel.app/works.html</loc>
+    </url>
+
+    <!-- Collaborator -->
+    <url>
+        <loc>https://teamunity62.vercel.app/collaborator.html</loc>
     </url>
 
 </urlset>
