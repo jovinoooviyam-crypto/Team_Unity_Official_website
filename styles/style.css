@@ -116,7 +116,9 @@ button { font-family: inherit; cursor: pointer; }
     flex-direction: row;
   }
 }
+
 .codehub p{
+  margin-left: 20px;
   font-size: 10px;
   color: lightgray;
 
