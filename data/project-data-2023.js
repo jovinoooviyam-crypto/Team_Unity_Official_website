@@ -1,3 +1,3 @@
-window.worksDatas2023 = [
+window.projectDatas2023 = [
 
 ];
