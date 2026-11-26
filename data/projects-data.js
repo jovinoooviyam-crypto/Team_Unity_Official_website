@@ -143,7 +143,7 @@ const projectDatas = [
         ID: "awarness",
         image: "/api/drive-image/1vnREpRuYCrrHb2jSWnRiffpFTqwA06HV",
         imageSlider: [
-            "/api/drive-image/1IKru6BOAdsx_x7K8_ylYxlUfac5EUY98",
+            // "/api/drive-image/1IKru6BOAdsx_x7K8_ylYxlUfac5EUY98",
             "/api/drive-image/1-eHJPytr4Kw0J0WS5pOZcRqeyMtLWXc2",
             "/api/drive-image/1hLwX7AWgSXkJCHZ8bir8ZjKF-MLI4NhJ",
             "/api/drive-image/1zlufsiBerWKIAClzJZ1LY8q1qbDro43W",
@@ -163,7 +163,7 @@ in maintaining a clean and healthy environment.`,
         image: "/api/drive-image/10yXNKJwTDUl5YJBl-R6CVwgGPJL8RaZa",
         imageSlider: [
             "/api/drive-image/15X6-C4GhE05CziAVRbQkVMqhvMzbJHA5",
-            // "/api/drive-image/1--kdwy8lqhpt3pPN2Fv8_7AVfKA4A5WY",
+            "/api/drive-image/1--kdwy8lqhpt3pPN2Fv8_7AVfKA4A5WY",
             "/api/drive-image/1LZa-sd3EbPd4M4L-17qJ4rnfidfWtrop",
             "/api/drive-image/1gMwYOCJJl2tJi_5k27wKMdBtaVU6tyEM",
         ],
