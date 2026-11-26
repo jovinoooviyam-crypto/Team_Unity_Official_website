@@ -120,7 +120,7 @@ body {
     color: white;
     background: transparent;
     cursor: pointer;
-    z-index: 1999;
+    z-index: 99;
 }
 
 .lightbox-close {
