@@ -1,192 +1,762 @@
+
 /* =========================================================
-   TEAM UNITY — WORKS PORTFOLIO
-   Single unified JavaScript controller
-   Handles year selection and rendering
+   TEAM UNITY - WORKS PORTFOLIO
+   Year Selection + Event Details Iframe Popup
 ========================================================= */
 
 class WorksPortfolio {
-  constructor() {
-    this.currentYear = "202x";
-    this.allYears = [2026, 2025, 2024, 2023, 2022];
-    this.eventCounts = {
-      2026: 0,
-      2025: 0,
-      2024: 0,
-      2023: 10,
-      2022: 0
-    };
-    this.init();
-  }
 
-  init() {
-    this.setupEventListeners();
-    this.loadYear(this.currentYear);
-  }
+    constructor() {
 
-  setupEventListeners() {
-    // Year selector buttons (in main section)
-    document.querySelectorAll('.year-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const year = parseInt(e.target.dataset.year);
-        this.switchYear(year);
-      });
-    });
+        this.currentYear = "202x";
 
-    // Year links (in footer)
-    document.querySelectorAll('.year-link').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const year = parseInt(e.target.dataset.year);
-        this.switchYear(year);
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
+        this.eventCounts = {
+            2026: 2,
+            2025: 0,
+            2024: 0,
+            2023: 10,
+            2022: 0
+        };
 
-    // Mobile menu toggle
-    this.setupMobileMenu();
-  }
-  
-  switchYear(year) {
-    // Update active button
-    document.querySelectorAll('.year-btn').forEach(btn => {
-      btn.classList.remove('active');
-      btn.setAttribute('aria-selected', 'false');
-    });
+        this.selectedWork = null;
+        this.currentImages = [];
+        this.currentImageIndex = 0;
 
-    const activeBtn = document.querySelector(`[data-year="${year}"]`);
-    if (activeBtn) {
-      activeBtn.classList.add('active');
-      activeBtn.setAttribute('aria-selected', 'true');
+        this.init();
     }
 
-    // Load and render year content
-    this.currentYear = year;
-    this.updateRecord(year);
-    this.loadYear(year);
-  }
+    // =====================================================
+    // INITIALIZATION
+    // =====================================================
 
-  updateRecord(year) {
-    const record = document.getElementById('record');
-    const eventCount = document.getElementById('eventCount');
-    
-    if (record) {
-      record.textContent = `RECORDS · ${year}`;
-    }
-  
-    if (eventCount) {
-      eventCount.textContent = this.eventCounts[year] ?? 0;
-    }
-  }
+    init() {
 
-  loadYear(year) {
-    // Check if data is available globally
-    const dataKey = `worksData${year}`;
-    
-    if (window[dataKey]) {
-      this.renderWorks(window[dataKey]);
-    } else {
-      console.warn(`No data found for year ${year}`);
-      this.showEmpty();
-    }
-  }
+        this.createDetailView();
+        this.createImageSlider();
+        this.createEventModal();
 
-  renderWorks(works) {
-    const grid = document.getElementById('worksGrid');
-    const emptyState = document.getElementById('emptyState');
+        this.setupEventListeners();
+        this.loadYear(this.currentYear);
 
-    if (!works || works.length === 0) {
-      this.showEmpty();
-      return;
     }
 
-    // Clear grid
-    grid.innerHTML = '';
-    emptyState.style.display = 'none';
+    // =====================================================
+    // OLD DETAIL CONTAINER
+    // =====================================================
 
-    // Render each work
-    works.forEach(work => {
-      const card = this.createWorkCard(work);
-      grid.appendChild(card);
-    });
+    createDetailView() {
 
-    // Trigger animation
-    grid.style.animation = 'none';
-    setTimeout(() => {
-      grid.style.animation = 'fadeIn 0.6s ease-out';
-    }, 10);
-  }
-    
+        const grid = document.getElementById("worksGrid");
 
-  createWorkCard(work) {
-    const card = document.createElement("article");
-    card.className = "work-card";
+        if (!grid) return;
 
-    // Tags
-    let tagsHTML = "";
+        this.detailView = document.createElement("section");
 
-    if (work.tags && work.tags.length > 0) {
-      tagsHTML = `
-        <div class="work-card-meta">
-          ${work.tags.map(tag =>
-            `<span class="work-tag">${tag}</span>`
-          ).join("")}
-        </div>
-      `;
+        this.detailView.id = "selectedWork";
+        this.detailView.className = "selected-work";
+        this.detailView.hidden = true;
+
+        grid.insertAdjacentElement("afterend", this.detailView);
+
     }
 
-    // Explore More link - navigates to projects.html with search parameter
-    let linkHTML = "";
+    // =====================================================
+    // CREATE IMAGE SLIDER
+    // =====================================================
 
-if (work.search) {
-  linkHTML = `
-    <a
-      href="projects.html?projectSearch=${encodeURIComponent(work.search)}"
-      class="work-card-link"
-    >
-      Explore More <span>→</span>
-    </a>
-  `;
+    createImageSlider() {
+
+        this.slider = document.createElement("div");
+
+        this.slider.className = "works-image-slider";
+        this.slider.setAttribute("aria-hidden", "true");
+
+        this.slider.innerHTML = `
+            <div class="works-slider-container">
+
+                <button class="works-slider-close"
+                    type="button"
+                    aria-label="Close image">
+                    &times;
+                </button>
+
+                <button class="works-slider-prev"
+                    type="button"
+                    aria-label="Previous image">
+                    ❮
+                </button>
+
+                <img class="works-slider-image" src="" alt="">
+
+                <button class="works-slider-next"
+                    type="button"
+                    aria-label="Next image">
+                    ❯
+                </button>
+
+                <div class="works-slider-counter">1 / 1</div>
+
+            </div>
+        `;
+
+        document.body.appendChild(this.slider);
+
+        this.sliderImage = this.slider.querySelector(
+            ".works-slider-image"
+        );
+
+        this.slider.querySelector(".works-slider-close")
+            .addEventListener("click", () => this.closeSlider());
+
+        this.slider.querySelector(".works-slider-prev")
+            .addEventListener("click", () => this.changeImage(-1));
+
+        this.slider.querySelector(".works-slider-next")
+            .addEventListener("click", () => this.changeImage(1));
+
+        this.slider.addEventListener("click", (event) => {
+
+            if (event.target === this.slider) {
+                this.closeSlider();
+            }
+
+        });
+
+    }
+
+    // =====================================================
+    // CREATE IFRAME POPUP
+    // =====================================================
+
+    createEventModal() {
+
+        this.modal = document.createElement("div");
+
+        this.modal.id = "eventIframeModal";
+        this.modal.className = "event-iframe-modal";
+
+        this.modal.innerHTML = `
+
+            <div class="event-iframe-backdrop"></div>
+
+            <div class="event-iframe-container">
+
+                <button
+                    class="event-iframe-close"
+                    type="button"
+                    aria-label="Close event details"
+                    title="Close"
+                >
+                    &times;
+                </button>
+
+                <iframe
+                    id="eventDetailsFrame"
+                    title="Team Unity Event Details"
+                    src="about:blank"
+                ></iframe>
+
+            </div>
+
+        `;
+
+        document.body.appendChild(this.modal);
+
+        this.iframe = this.modal.querySelector(
+            "#eventDetailsFrame"
+        );
+
+        // CLOSE BUTTON
+        const closeButton = this.modal.querySelector(
+            ".event-iframe-close"
+        );
+
+        closeButton.addEventListener("click", (event) => {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            console.log("Event popup close button clicked");
+
+            this.backToWorks();
+
+        });
+
+        // BACKDROP CLICK
+        this.modal.querySelector(".event-iframe-backdrop")
+            .addEventListener("click", () => {
+
+                this.backToWorks();
+
+            });
+
+    }
+
+    // =====================================================
+    // EVENT LISTENERS
+    // =====================================================
+
+    setupEventListeners() {
+
+        // Year buttons
+        document.querySelectorAll(".year-btn").forEach(btn => {
+
+            btn.addEventListener("click", () => {
+
+                this.switchYear(Number(btn.dataset.year));
+
+            });
+
+        });
+
+        // Year navigation links
+        document.querySelectorAll(".year-link").forEach(btn => {
+
+            btn.addEventListener("click", () => {
+
+                this.switchYear(Number(btn.dataset.year));
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            });
+
+        });
+
+        // Explore More buttons
+        const grid = document.getElementById("worksGrid");
+
+        if (grid) {
+
+            grid.addEventListener("click", (event) => {
+
+                const button = event.target.closest(".work-card-link");
+
+                if (!button) return;
+
+                event.preventDefault();
+
+                this.openSelectedWork(button.dataset.search);
+
+            });
+
+        }
+
+        // Keyboard controls
+        document.addEventListener("keydown", (event) => {
+
+            // Close image slider first
+            if (
+                this.slider &&
+                this.slider.classList.contains("active")
+            ) {
+
+                if (event.key === "Escape") {
+                    this.closeSlider();
+                }
+
+                if (event.key === "ArrowLeft") {
+                    this.changeImage(-1);
+                }
+
+                if (event.key === "ArrowRight") {
+                    this.changeImage(1);
+                }
+
+                return;
+
+            }
+
+            // Close iframe popup
+            if (
+                this.modal &&
+                this.modal.classList.contains("active") &&
+                event.key === "Escape"
+            ) {
+
+                this.backToWorks();
+
+            }
+
+        });
+
+        this.setupMobileMenu();
+
+    }
+
+    // =====================================================
+    // YEAR SELECTION
+    // =====================================================
+
+    switchYear(year) {
+
+        document.querySelectorAll(".year-btn").forEach(btn => {
+
+            btn.classList.remove("active");
+            btn.setAttribute("aria-selected", "false");
+
+        });
+
+        const activeBtn = document.querySelector(
+            `.year-btn[data-year="${year}"]`
+        );
+
+        if (activeBtn) {
+
+            activeBtn.classList.add("active");
+            activeBtn.setAttribute("aria-selected", "true");
+
+        }
+
+        this.currentYear = year;
+
+        this.backToWorks();
+
+        this.updateRecord(year);
+
+        this.loadYear(year);
+
+    }
+
+    updateRecord(year) {
+
+        const record = document.getElementById("record");
+        const eventCount = document.getElementById("eventCount");
+
+        if (record) {
+            record.textContent = `RECORDS · ${year}`;
+        }
+
+        if (eventCount) {
+            eventCount.textContent = this.eventCounts[year] ?? 0;
+        }
+
+    }
+
+    // =====================================================
+    // LOAD YEAR DATA
+    // =====================================================
+
+    loadYear(year) {
+
+        const dataKey = `worksData${year}`;
+
+        const works = window[dataKey];
+
+        if (works) {
+
+            this.renderWorks(works);
+
+        } else {
+
+            this.showEmpty();
+
+        }
+
+    }
+
+    // =====================================================
+    // RENDER WORK CARDS
+    // =====================================================
+
+    renderWorks(works) {
+
+        const grid = document.getElementById("worksGrid");
+        const emptyState = document.getElementById("emptyState");
+
+        if (!grid) return;
+
+        if (!works || works.length === 0) {
+
+            this.showEmpty();
+            return;
+
+        }
+
+        grid.innerHTML = "";
+
+        if (emptyState) {
+            emptyState.style.display = "none";
+        }
+
+        works.forEach(work => {
+
+            const card = this.createWorkCard(work);
+
+            grid.appendChild(card);
+
+        });
+
+        grid.style.animation = "none";
+
+        setTimeout(() => {
+
+            grid.style.animation = "fadeIn 0.6s ease-out";
+
+        }, 10);
+
+    }
+
+    // =====================================================
+    // CREATE WORK CARD
+    // =====================================================
+
+    createWorkCard(work) {
+
+        const card = document.createElement("article");
+
+        card.className = "work-card";
+
+        const tagsHTML = (work.tags || []).map(tag => `
+
+            <span class="work-tag">
+                ${this.escapeHTML(tag)}
+            </span>
+
+        `).join("");
+
+        card.innerHTML = `
+
+            <div class="work-card-content">
+
+                <h3>
+                    ${this.escapeHTML(work.title)}
+                </h3>
+
+                <div class="work-card-meta">
+                    ${tagsHTML}
+                </div>
+
+                <p>
+                    <strong>Date:</strong>
+                    ${this.escapeHTML(
+                        (work.date || "").replace(/^Date:\s*/, "")
+                    )}
+                </p>
+
+                <p>
+                    <strong>Description:</strong>
+                    ${this.escapeHTML(
+                        (work.description || "").replace(/^Description:\s*/, "")
+                    )}
+                </p>
+
+                ${work.search ? `
+
+                    <button
+                        type="button"
+                        class="work-card-link"
+                        data-search="${this.escapeHTML(work.search)}"
+                    >
+                        Explore More <span>→</span>
+                    </button>
+
+                ` : ""}
+
+            </div>
+
+        `;
+
+        return card;
+
+    }
+
+    // =====================================================
+    // OPEN SELECTED EVENT
+    // =====================================================
+
+    openSelectedWork(mappingTag) {
+
+        const event = projectDatas.find(item =>
+
+            String(item.mappingtag) === String(mappingTag)
+
+        );
+
+        const worksData = window[
+            `worksData${this.currentYear}`
+        ] || [];
+
+        const work = worksData.find(item =>
+
+            String(item.search) === String(mappingTag)
+
+        );
+
+        if (!event) {
+
+            console.error("Event not found:", mappingTag);
+
+            return;
+
+        }
+
+        // Prepare iframe URL
+        const params = new URLSearchParams({
+
+            mappingtag: mappingTag,
+
+            title: work?.title || "Team Unity Event"
+
+        });
+
+        // Load selected event
+        this.iframe.src =
+            `event-details.html?${params.toString()}`;
+
+        // Show popup
+        this.modal.classList.add("active");
+
+        document.body.classList.add("event-modal-open");
+
+        document.body.style.overflow = "hidden";
+
+        this.selectedWork = event;
+
+    }
+
+    // =====================================================
+    // CLOSE EVENT POPUP
+    // =====================================================
+
+    backToWorks() {
+
+        // Close iframe popup
+        if (this.modal) {
+
+            this.modal.classList.remove("active");
+
+            // Stop iframe loading
+            if (this.iframe) {
+
+                this.iframe.src = "about:blank";
+
+            }
+
+        }
+
+        // Close image slider
+        this.closeSlider();
+
+        // Restore page scrolling
+        document.body.classList.remove("event-modal-open");
+
+        document.body.style.overflow = "";
+
+        // Reset selection
+        this.selectedWork = null;
+
+    }
+
+    // =====================================================
+    // OLD DETAIL RENDERER (NOT USED BY IFRAME)
+    // =====================================================
+
+    renderSelectedWork(work, event) {
+
+        const images = [
+            event.image,
+            ...(event.imageSlider || [])
+        ].filter(Boolean);
+
+        const galleryHTML = images.map((image, index) => `
+
+            <button
+                type="button"
+                class="selected-work-photo"
+                data-index="${index}"
+            >
+                <img
+                    src="${this.escapeHTML(image)}"
+                    alt="Event photograph ${index + 1}"
+                >
+            </button>
+
+        `).join("");
+
+        this.detailView.innerHTML = `
+
+            <button
+                type="button"
+                class="selected-work-back"
+                id="backToWorks"
+            >
+                Back to Our Works
+            </button>
+
+            <h2>${this.escapeHTML(work.title)}</h2>
+
+            <p>${this.escapeHTML(event.date || "")}</p>
+
+            <p>${this.escapeHTML(event.venue || "")}</p>
+
+            <p>${this.escapeHTML(event.description || "")}</p>
+
+            <div class="selected-gallery-grid">
+                ${galleryHTML}
+            </div>
+
+        `;
+
+        this.currentImages = images;
+
+    }
+
+    // =====================================================
+    // IMAGE SLIDER
+    // =====================================================
+
+    openSlider(index) {
+
+        if (!this.currentImages.length) return;
+
+        this.currentImageIndex = index;
+
+        this.updateSlider();
+
+        this.slider.classList.add("active");
+
+        this.slider.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+    updateSlider() {
+
+        this.sliderImage.src =
+            this.currentImages[this.currentImageIndex];
+
+        this.sliderImage.alt =
+            `Event photo ${this.currentImageIndex + 1}`;
+
+        this.slider.querySelector(".works-slider-counter")
+            .textContent =
+            `${this.currentImageIndex + 1} / ${this.currentImages.length}`;
+
+        this.slider.querySelector(".works-slider-prev").disabled =
+            this.currentImageIndex === 0;
+
+        this.slider.querySelector(".works-slider-next").disabled =
+            this.currentImageIndex === this.currentImages.length - 1;
+
+    }
+
+    changeImage(direction) {
+
+        const nextIndex = this.currentImageIndex + direction;
+
+        if (
+            nextIndex < 0 ||
+            nextIndex >= this.currentImages.length
+        ) return;
+
+        this.currentImageIndex = nextIndex;
+
+        this.updateSlider();
+
+    }
+
+    closeSlider() {
+
+        if (!this.slider) return;
+
+        this.slider.classList.remove("active");
+
+        this.slider.setAttribute("aria-hidden", "true");
+
+        this.sliderImage.src = "";
+
+        // Keep scrolling locked if iframe popup remains open
+        if (
+            this.modal &&
+            this.modal.classList.contains("active")
+        ) {
+
+            document.body.style.overflow = "hidden";
+
+        } else {
+
+            document.body.style.overflow = "";
+
+        }
+
+    }
+
+    // =====================================================
+    // EMPTY STATE
+    // =====================================================
+
+    showEmpty() {
+
+        const grid = document.getElementById("worksGrid");
+
+        const emptyState = document.getElementById("emptyState");
+
+        if (grid) {
+            grid.innerHTML = "";
+        }
+
+        if (emptyState) {
+            emptyState.style.display = "flex";
+        }
+
+    }
+
+    // =====================================================
+    // MOBILE MENU
+    // =====================================================
+
+    setupMobileMenu() {
+
+        const menuBtn = document.getElementById("menuBtn");
+
+        const mobileNav = document.getElementById("mobileNav");
+
+        if (!menuBtn || !mobileNav) return;
+
+        menuBtn.addEventListener("click", () => {
+
+            mobileNav.classList.toggle("active");
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                mobileNav.classList.contains("active")
+            );
+
+        });
+
+    }
+
+    // =====================================================
+    // HTML ESCAPING
+    // =====================================================
+
+    escapeHTML(value) {
+
+        return String(value ?? "").replace(/[&<>"']/g, char => ({
+
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+
+        })[char]);
+
+    }
+
 }
 
-    card.innerHTML = `
-      <div class="work-card-content">
-        <h3>${work.title}</h3>
 
-        ${tagsHTML}
+// =========================================================
+// INITIALIZE
+// =========================================================
 
-        <p>
-          <strong>Date:</strong>
-          ${(work.date || "").replace(/^Date:\s*/, "")}
-        </p>
+document.addEventListener("DOMContentLoaded", () => {
 
-        <p>
-          <strong>Description:</strong>
-          ${(work.description || "").replace(/^Description:\s*/, "")}
-        </p>
+    window.worksPortfolio = new WorksPortfolio();
 
-        ${linkHTML}
-      </div>
-    `;
-
-  return card;
-}
-
-
-
-  showEmpty() {
-    const grid = document.getElementById('worksGrid');
-    const emptyState = document.getElementById('emptyState');
-
-    grid.innerHTML = '';
-    emptyState.style.display = 'block';
-  }
-
-  setupMobileMenu() {
-    // Mobile menu setup if needed
-  }
-}
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  new WorksPortfolio();
 });
