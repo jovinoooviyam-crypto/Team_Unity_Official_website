@@ -760,3 +760,33 @@ document.addEventListener("DOMContentLoaded", () => {
     window.worksPortfolio = new WorksPortfolio();
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    if (!menuBtn || !mobileNav) return;
+
+    menuBtn.addEventListener("click", () => {
+        mobileNav.classList.toggle("active");
+    });
+
+    // Close dropdown after clicking a navigation link
+    mobileNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileNav.classList.remove("active");
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (event) => {
+        if (
+            !menuBtn.contains(event.target) &&
+            !mobileNav.contains(event.target)
+        ) {
+            mobileNav.classList.remove("active");
+        }
+    });
+
+});
