@@ -3,7 +3,7 @@
    Edit this file to add/update 2026 projects
 ========================================================= */
 
-window.worksData202x = [
+window.worksData2026 = [
 
   /*
   // JAN
