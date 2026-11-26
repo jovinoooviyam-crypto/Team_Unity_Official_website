@@ -687,6 +687,12 @@ button { font-family: inherit; cursor: pointer; }
         grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
         gap: 18px;
     }
+
+    .join-card p {
+      color: #aebadc;
+      font-size: .88rem;
+      margin-bottom: 20px;
+    }
 }
 /* .join-card { 
   padding: 30px 22px;
@@ -715,7 +721,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .join-card p {
   color: #aebadc;
-  font-size: .88rem;
+  font-size: .5rem;
   margin-bottom: 20px;
 }
 
