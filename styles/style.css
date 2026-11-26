@@ -111,7 +111,7 @@ button { font-family: inherit; cursor: pointer; }
   .codehub {
     display: flex;
     justify-content: space-between;
-    margin-left: 20px;
+    margin-left: 60px;
     margin-right: 80px;
     flex-direction: row;
   }
