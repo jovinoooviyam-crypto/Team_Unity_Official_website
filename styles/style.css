@@ -661,31 +661,24 @@ button { font-family: inherit; cursor: pointer; }
 
 /* MOBILE */
 .join-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px;
+    width: 100%;
 }
 
 .join-card {
-  box-sizing: border-box;
-  width: 100%;
-  min-width: 0;
-  padding: 20px 12px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
-/* DESKTOP */
-@media screen and (min-width: 768px) {
-  .join-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
-  }
-
-  .join-card {
-    padding: 30px 22px;
-  }
+@media (min-width: 768px) {
+    .join-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 18px;
+    }
 }
-
 /* .join-card { 
   padding: 30px 22px;
   border-radius: var(--radius);
