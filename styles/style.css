@@ -653,38 +653,37 @@ button { font-family: inherit; cursor: pointer; }
    JOIN WITH US
 ========================================================= */
 
+
 .join-block { background: var(--blue-900); }
 .join-block .section-label { color: var(--yellow); }
 .join-block h2 { color: var(--paper); }
 .join-block .section-intro { color: #b9c4e2; }
 
 /* MOBILE */
-/* Grid layout */
 .join-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
 }
 
-/* Cards */
 .join-card {
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 0;
-    padding: 20px 12px;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 20px 12px;
 }
 
-/* Desktop */
+/* DESKTOP */
 @media screen and (min-width: 768px) {
-    .join-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 18px;
-    }
+  .join-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
 
-    .join-card {
-        padding: 30px 22px;
-    }
+  .join-card {
+    padding: 30px 22px;
+  }
 }
 
 /* .join-card { 
@@ -712,7 +711,11 @@ button { font-family: inherit; cursor: pointer; }
   margin: 16px 0 8px;
 }
 
-.join-card p { color: #aebadc; font-size: .88rem; margin-bottom: 20px; }
+.join-card p {
+  color: #aebadc;
+  font-size: .88rem;
+  margin-bottom: 20px;
+}
 
 .join-card .btn-outline {
   border-color: rgba(230, 225, 150, .35);
