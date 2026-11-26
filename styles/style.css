@@ -658,23 +658,36 @@ button { font-family: inherit; cursor: pointer; }
 .join-block h2 { color: var(--paper); }
 .join-block .section-intro { color: #b9c4e2; }
 
-/* desktop */
-@media (min-width: 768px) { 
-.join-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-}
-
 /* MOBILE */
-.join-gird {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+/* Grid layout */
+.join-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
 }
 
-  .join-card {
+/* Cards */
+.join-card {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 20px 12px;
+}
+
+/* Desktop */
+@media screen and (min-width: 768px) {
+    .join-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .join-card {
+        padding: 30px 22px;
+    }
+}
+
+/* .join-card { 
   padding: 30px 22px;
   border-radius: var(--radius);
   background: rgba(253, 253, 250, .04);
@@ -682,7 +695,7 @@ button { font-family: inherit; cursor: pointer; }
   text-align: left;
   color: #fff;
   transition: background .35s var(--ease), border-color .35s var(--ease), transform .35s var(--ease);
-}
+}*/
 
 .join-card:hover {
   background: rgba(230, 225, 150, .08);
