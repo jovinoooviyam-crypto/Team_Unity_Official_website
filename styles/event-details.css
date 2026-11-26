@@ -124,7 +124,7 @@ body {
 
 .lightbox-close {
     top: 40px;
-    right: 60px;
+    right: 30px;
     font-size: 40px;
     z-index: 9999;
 }
