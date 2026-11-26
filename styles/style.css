@@ -668,9 +668,18 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .join-card {
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  padding: 30px 22px;
+  border-radius: var(--radius);
+  background: rgba(253, 253, 250, .04);
+  border: 1px solid rgba(230, 225, 150, .18);
+  text-align: left;
+  color: #fff;
+  transition: background .35s var(--ease), border-color .35s var(--ease), transform .35s var(--ease);
+
 }
 
 @media (min-width: 768px) {
