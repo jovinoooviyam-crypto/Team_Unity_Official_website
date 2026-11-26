@@ -668,21 +668,13 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* MOBILE */
-@media (max-width: 767px) {
-
-  .join-gird {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-
-  .join-card {
-    width: 150px;
-  }
+.join-gird {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
 }
 
-
-.join-card {
+  .join-card {
   padding: 30px 22px;
   border-radius: var(--radius);
   background: rgba(253, 253, 250, .04);
