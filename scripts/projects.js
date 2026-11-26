@@ -61,6 +61,17 @@
             poster:
                 "/api/drive-image/1WxCNtuaZ1hFjgvQ9knuQF9uFb3VwAoeR",
             mappingid: "volunteering"
+        },
+
+        {
+            id: "skill-lab",
+            title: "Skill-Labs",
+            category: "Skill labs",
+            description:
+                "Event volunteering involves assisting in event planning, coordination, registration, and management, ensuring smooth execution through teamwork, responsibility, and effective communication.",
+            poster:
+                "/api/drive-image/1WxCNtuaZ1hFjgvQ9knuQF9uFb3VwAoeR",
+            mappingid: "skill-labs"
         }
 
     ];
