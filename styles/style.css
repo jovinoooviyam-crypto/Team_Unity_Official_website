@@ -658,12 +658,30 @@ button { font-family: inherit; cursor: pointer; }
 .join-block h2 { color: var(--paper); }
 .join-block .section-intro { color: #b9c4e2; }
 
+/* desktop */
+@media (min-width: 768px) { 
 .join-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
-@media (min-width: 768px) {
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+
+  .join-gird {
+    display: grid;
+    grid-template-columns: repeat(2, fr);
+    gap: 18px;
+  }
+
+  .join-card {
+    min-height: 300px;
+  }
+
+}
+
 
 .join-card {
   padding: 30px 22px;
@@ -704,7 +722,7 @@ button { font-family: inherit; cursor: pointer; }
   border-color: var(--yellow);
   color: var(--blue-900);
 }
-}
+
 
 /* =========================================================
    SOCIAL
@@ -1119,10 +1137,4 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @keyframes colorchange {
   0% {color: #ff0000;}
   50% {color: #ffffff;}
-}
-
-@media (max-width: 767px) {
-
-  
-
 }
