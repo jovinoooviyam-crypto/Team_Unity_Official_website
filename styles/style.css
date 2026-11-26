@@ -675,6 +675,10 @@ button { font-family: inherit; cursor: pointer; }
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
   }
+
+  .join-card {
+    width: 150px;
+  }
 }
 
 
