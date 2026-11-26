@@ -1568,7 +1568,6 @@ button:focus-visible {
   height: 100%;
   border: none;
   background: #ffffff;
-  top: 20px;
 }
 
 .event-iframe-close {
@@ -1614,6 +1613,7 @@ body.event-modal-open {
     width: 100%;
     height: 94vh;
     border-radius: 13px;
+    top: 30px;
   }
 
   .event-iframe-close {
