@@ -1614,6 +1614,7 @@ body.event-modal-open {
     height: 94vh;
     border-radius: 13px;
     top: 30px;
+    bottom: 30px;
   }
 
   .event-iframe-close {
