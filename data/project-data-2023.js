@@ -1,3 +1,2 @@
 window.projectDatas2023 = [
-
 ];
