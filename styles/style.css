@@ -1122,7 +1122,46 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 @media (max-width: 767px) {
-  .join-card{
-    background-color: #b5502f;
-  }
+
+  .join-card {
+  padding: 15px 11px;
+  border-radius: var(--radius);
+  background: rgba(253, 253, 250, .04);
+  border: 1px solid rgba(230, 225, 150, .18);
+  text-align: left;
+  color: #fff;
+  transition: background .35s var(--ease), border-color .35s var(--ease), transform .35s var(--ease);
+}
+
+.join-card:hover {
+  background: rgba(230, 225, 150, .08);
+  border-color: var(--yellow);
+  transform: translateY(-6px);
+}
+
+.join-card span { font-size: 1.7rem; }
+
+.join-card h3 {
+  color: var(--paper);
+  font-size: 1rem;
+  letter-spacing: .04em;
+  margin: 16px 0 8px;
+}
+
+.join-card p { color: #aebadc; font-size: .88rem; margin-bottom: 20px; }
+
+.join-card .btn-outline {
+  border-color: rgba(230, 225, 150, .35);
+  color: var(--yellow-050);
+  padding: 10px 20px;
+  font-size: .85rem;
+}
+
+.join-card .btn-outline:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--blue-900);
+}
+
+
 }
