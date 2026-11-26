@@ -120,14 +120,13 @@ body {
     color: white;
     background: transparent;
     cursor: pointer;
-    z-index: 1500;
 }
 
 .lightbox-close {
     top: 20px;
     right: 25px;
     font-size: 40px;
-    z-index: 1500;
+    z-index: 1999;
 }
 
 .lightbox-arrow {
