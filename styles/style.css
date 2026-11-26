@@ -677,7 +677,7 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .join-card {
-    min-height: 300px;
+    height: 300px;
   }
 
 }
