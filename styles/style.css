@@ -672,14 +672,9 @@ button { font-family: inherit; cursor: pointer; }
 
   .join-gird {
     display: grid;
-    grid-template-rows: repeat(4, fr);
-    gap: 18px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
-
-  .join-card {
-    width: 200px;
-  }
-
 }
 
 
