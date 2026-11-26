@@ -663,6 +663,7 @@ button { font-family: inherit; cursor: pointer; }
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
+@media (min-width: 768px) {
 
 .join-card {
   padding: 30px 22px;
@@ -702,6 +703,7 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--yellow);
   border-color: var(--yellow);
   color: var(--blue-900);
+}
 }
 
 /* =========================================================
@@ -1117,4 +1119,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @keyframes colorchange {
   0% {color: #ff0000;}
   50% {color: #ffffff;}
+}
+
+@media (max-width: 767px) {
+  .join-card{
+    background-color: #b5502f;
+  }
 }
