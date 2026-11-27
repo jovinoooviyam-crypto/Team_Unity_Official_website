@@ -74,7 +74,7 @@ window.projectDatas2023 = [
         date: "Date: 05-11-2023",
         venue: "Undefined",
         description: `As part of the 2023 Diwali celebrations, Team Unity collaborated with Swami Vivekananda Youth Club (SVYC) to celebrate the Festival of Lights with tribal families in Nalambakkam. The event brought together approximately 70 families, including 150 adults and 50 children, fostering joy, cultural exchange, inclusivity and community engagement.`,
-        mappingid: "05112023"
+        mappingtag: "05112023"
     },
 
     {
@@ -89,7 +89,7 @@ window.projectDatas2023 = [
         date: "Date: 11-11-2023",
         venue: "Undefined",
         description: `On 11 November 2023, Team Unity participated in the Festival of Lights and Children's Day Celebration organized by the District AIDS Prevention and Control Unit (DAPU), Thiruvallur, in collaboration with Shelter Trust Positive Friends Welfare Association. The event brought together Children Living with HIV (CLHIV) for a joyful and inclusive celebration, promoting happiness, support and community participation.`,
-        mappingid: "11112023"
+        mappingtag: "11112023"
     },
 
     // DEC 2023
@@ -105,7 +105,7 @@ window.projectDatas2023 = [
         date: "Date: 03-12-2023",
         venue: "Undefined",
         description: `On the occasion of the International Day of Persons with Disabilities, Team Unity presented a special Parai performance celebrating the strength, resilience and contributions of persons with disabilities. Through traditional folk art, the performance promoted awareness of inclusion, equality and respect for diversity.`,
-        mappingid: "03122023"
+        mappingtag: "03122023"
     },
 
     // UNKONOWN DATES
@@ -121,7 +121,7 @@ window.projectDatas2023 = [
         date: "Date: Na-Na-2023",
         venue: "Undefined",
         description: `In 2023, Team Unity collaborated with Saathi NGO to conduct a Vaccination Awareness Street Play as part of a community outreach initiative. The programme aimed to educate the public about the importance of vaccination, promote preventive healthcare and encourage vaccination across all age groups.`,
-        mappingid: "NaNa2023-1"
+        mappingtag: "NaNa2023-1"
     },
 
     {
@@ -135,7 +135,7 @@ window.projectDatas2023 = [
         date: "Date: Na-Na-2023",
         venue: "Undefined",
         description: `In 2023, Team Unity collaborated with Chinna Chiru Ulagam Welfare Trust to participate in a First Aid Training Programme conducted by Alert NGO. The programme focused on equipping participants with essential first aid knowledge and emergency response skills to provide immediate assistance during medical emergencies and accidents.`,
-        mappingid: "NaNa2023-2"
+        mappingtag: "NaNa2023-2"
     },
 
     {
@@ -149,7 +149,7 @@ window.projectDatas2023 = [
         date: "Date: Na-Na-2023",
         venue: "CMBT Chennai",
         description: `Team Unity collaborated with Koyambedu (CMBT) Police Station, Chennai, to present a Drug Awareness Mime Performance highlighting the harmful effects of drug abuse and promoting a drug-free society. Conducted in a busy public space, the performance aimed to reach a diverse audience and spread awareness about substance abuse prevention.`,
-        mappingid: "NaNa2023-3"
+        mappingtag: "NaNa2023-3"
     },
     
 ];
