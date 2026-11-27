@@ -62,7 +62,7 @@
                 "/api/drive-image/1WxCNtuaZ1hFjgvQ9knuQF9uFb3VwAoeR",
             mappingid: "volunteering"
         },
-
+/*
         {
             id: "skill-lab",
             title: "Skill-Labs",
@@ -73,7 +73,7 @@
                 "/api/drive-image/1WxCNtuaZ1hFjgvQ9knuQF9uFb3VwAoeR",
             mappingid: "skill-labs"
         }
-
+*/
     ];
 
     // =====================================================
