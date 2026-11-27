@@ -13,7 +13,7 @@ window.projectDatas2023 = [
         date: "Date: 04-06-2023",
         venue: "Perambur Park,Chennai",
         description: `On 4 June 2023, Team Unity participated in the World No Tobacco Day Awareness Programme organized by FEETS Organization. Through traditional Tamil folk art forms, Parai and Oyil, the team raised awareness about the harmful effects of tobacco consumption and encouraged the community to adopt healthier, tobacco-free lifestyles.`,
-        mappingid: "04062023"
+        mappingtag: "04062023"
     },
 
     // OCT 2023
@@ -29,7 +29,7 @@ window.projectDatas2023 = [
         date: "Date: 07-10-2023",
         venue: "Undefined",
         description: `Team Unity collaborated with India Turns Pink for a Breast Cancer Awareness Campaign at Meenambakkam International Airport, marking its third consecutive year of participation. The team conducted awareness activities across three airport locations through mime and flashmob performances, highlighting the importance of breast cancer awareness and early detection.`,
-        mappingid: "07102023"
+        mappingtag: "07102023"
     },
 
     {
@@ -44,7 +44,7 @@ window.projectDatas2023 = [
         date: "Date: 16-10-2023",
         venue: "Undefined",
         description: `Team Unity participated in a Mass Awareness Programme organized by the Department of Social Work, Soka Ikeda College of Arts and Science for Women, as part of International Breast Cancer Awareness Month. The initiative focused on educating the public about breast cancer, emphasizing early detection, preventive healthcare and the importance of community awareness.`,
-        mappingid: "16102023"
+        mappingtag: "16102023"
     },
 
     {
@@ -58,7 +58,7 @@ window.projectDatas2023 = [
         date: "Date: 31-10-2023",
         venue: "Undefined",
         description: `Team Unity was honoured and felicitated at the Namma Chennai Airport Turns Pink – Felicitation Ceremony during Pinktober 2023. The initiative, held under the theme “Check · Screen · Prevent,” marked the eighth year of promoting breast cancer awareness and encouraging early detection and preventive healthcare practices.`,
-        mappingid: "31102023"
+        mappingtag: "31102023"
     },
 
     // NOV 2023

@@ -28,7 +28,7 @@ window.worksData2025 = [
         tags: ["Art Performance"],
         date: "26-12-2025",
         description: "",
-        search: "26122025"
+        search: "26122025",
     },
     
 ];

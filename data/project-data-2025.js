@@ -30,7 +30,7 @@ window.projectDatas2025 = [
         date: "Date: 26-12-2025",
         venue: "IMH,Chennai",
         description: `Team Unity, in collaboration with Madras Christian College (MCC), served as Resource Persons at the Institute of Mental Health (IMH), Ayanavaram, facilitating an Art Therapy and Sound Healing session for the residents. The programme used culturally rooted artistic activities to encourage emotional well-being, self-expression and social interaction.`,
-        mappingid: "26122025",
+        mappingtag: "26122025",
     },
 
     // NOV 2025
@@ -45,7 +45,7 @@ window.projectDatas2025 = [
         date: "Date: Na-11-2025",
         venue: "Don bosco polytechnic college,Puliyanthope",
         description: `Team Unity volunteered with the Golden Heart Foundation, an organization dedicated to supporting children residing in children's homes. Through this initiative, the team contributed to activities that created a positive, engaging and supportive environment for more than 2,000 children across various children's homes.`,
-        mappingid: "Na112025"
+        mappingtag: "Na112025"
     }
 
 ];

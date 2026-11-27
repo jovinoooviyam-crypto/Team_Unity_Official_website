@@ -13,7 +13,7 @@ window.projectDatas2024 = [
         date: "Date: Na-10-2024",
         venue: "Chennai",
         description: `As part of International Breast Cancer Awareness Month 2024, Team Unity presented a Breast Cancer Awareness Dance Performance to highlight the importance of early detection, regular screening and preventive healthcare. Through artistic expression and community engagement, the programme aimed to spread awareness, educate the public and encourage open conversations about breast cancer.`,
-        mappingid: "Na102024"
+        mappingtag: "Na102024"
     }
 
 ];
