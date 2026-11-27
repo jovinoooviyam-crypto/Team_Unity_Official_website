@@ -41,63 +41,63 @@ window.worksData2023 = [
     },
 
     // NOV 2023
-    /*
+    
     {
         id: 5,
-        title: "",
-        tags: [""],
-        date: "",
-        description: "",
-        search: "",
-    }.
+        title: "SVYC - Diwali celebration ",
+        tags: ["Diwali Celebration", "Performance"],
+        date: "05-11-2023",
+        description: "Team Unity and SVYC celebrated Diwali with tribal families in Nalambakkam, promoting joy, inclusivity and community bonding",
+        search: "05112023",
+    },
 
     {
         id: 6,
-        title: "",
-        tags: [""],
-        date: "",
-        description: "",
-        search: "",
+        title: "Children day celebration",
+        tags: ["Performance"],
+        date: "11-11-2023",
+        description: "Team Unity participated in the Diwali and Children's Day celebration organized by DAPU, Thiruvallur, for Children Living with HIV (CLHIV).",
+        search: "11112023",
     },
 
     // DEC 2023
 
     {
         id: 7,
-        title: "",
-        tags: [""],
-        date: "",
-        description: "",
-        search: "",
+        title: "International day of differently able",
+        tags: ["Performance"],
+        date: "03-12-2023",
+        description: "Team Unity presented a special Parai performance on the International Day of Persons with Disabilities, promoting inclusion, equality and diversity",
+        search: "03122023",
     },
 
     // UNKNOWN DATES
-    /*
+    
     {
         id: 7,
-        title: "",
-        tags: [""],
-        date: "",
-        description: "",
-        search: "",
+        title: "Saathi Ngo - Vaccination awareness",
+        tags: ["Awarness"],
+        date: "Na-Na-2023",
+        description: "Team Unity collaborated with Saathi NGO to present a street play promoting vaccination awareness and preventive healthcare in 2023",
+        search: "NaNa2023-1",
     },
 
     {
         id: 7,
-        title: "",
-        tags: [""],
-        date: "",
-        description: "",
-        search: "",
+        title: "Chinna chiru ulagam welfare trust",
+        tags: ["Program"],
+        date: "Na-Na-2023",
+        description: "Team Unity collaborated with Chinna Chiru Ulagam Welfare Trust in a first aid training programme conducted by Alert NGO, developing essential emergency response skills.",
+        search: "NaNa2023-2",
     },
 
     {
         id: 7,
-        title: "",
-        tags: [""],
-        date: "",
-        description: "",
-        search: "",
+        title: "Awareness on Drugs, CMBT",
+        tags: ["Awarness"],
+        date: "Na-Na-2023",
+        description: "Team Unity collaborated with Koyambedu Police Station to present a mime performance promoting drug awareness and a drug-free society.",
+        search: "NaNa2023-3",
     },
-    */
+    
 ];

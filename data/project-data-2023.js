@@ -62,93 +62,94 @@ window.projectDatas2023 = [
     },
 
     // NOV 2023
-    /*
+    
     {
-        ID: "",
-        image: "/api/drive-image/",
+        ID: "performance",
+        image: "/api/drive-image/1C-Nw8kbC5BFkwYANT-g7K1u0ev2DvBgm",
         imageSlider: [
-            "/api/drive-image/",
-            "/api/drive-image/",
-            "/api/drive-image/",
+            "/api/drive-image/1RqHk_Uvbl02eVIUWZtqf3rMwVYEbbAth",
+            "/api/drive-image/1vG-N3vAEEfTjSqAMFl_wy2StYUCPQGdq",
+            "/api/drive-image/1gZmJKoRzG6AYw-d8_vN5gIHE6rOtRWXN",
         ],
-        date: "Date: ",
-        venue: "",
-        description: ``,
-        mappingid: ""
+        date: "Date: 05-11-2023",
+        venue: "Undefined",
+        description: `As part of the 2023 Diwali celebrations, Team Unity collaborated with Swami Vivekananda Youth Club (SVYC) to celebrate the Festival of Lights with tribal families in Nalambakkam. The event brought together approximately 70 families, including 150 adults and 50 children, fostering joy, cultural exchange, inclusivity and community engagement.`,
+        mappingid: "05112023"
     },
 
     {
-        ID: "",
-        image: "/api/drive-image/",
+        ID: "performance",
+        image: "/api/drive-image/1JzIhvDRGryu4nVmEWsi_HKq_UYJVVjYt",
         imageSlider: [
-            "/api/drive-image/",
-            "/api/drive-image/",
-            "/api/drive-image/",
+            "/api/drive-image/135XOzQnFHVSl0Ed-U5YvQ1lVw8JAUlAr",
+            "/api/drive-image/1m2Xmnt3isudyDoldvQFq4ut5RwL122Bl",
+            "/api/drive-image/1VVKEWMW-OglISKmgmjdvMHOJ-2fE-6Y9",
+            "/api/drive-image/1p8NXXNO9tovWsTsAUT1paLeqlLFeRb3n",
         ],
-        date: "Date: ",
-        venue: "",
-        description: ``,
-        mappingid: ""
+        date: "Date: 11-11-2023",
+        venue: "Undefined",
+        description: `On 11 November 2023, Team Unity participated in the Festival of Lights and Children's Day Celebration organized by the District AIDS Prevention and Control Unit (DAPU), Thiruvallur, in collaboration with Shelter Trust Positive Friends Welfare Association. The event brought together Children Living with HIV (CLHIV) for a joyful and inclusive celebration, promoting happiness, support and community participation.`,
+        mappingid: "11112023"
     },
 
     // DEC 2023
 
     {
-        ID: "",
-        image: "/api/drive-image/",
+        ID: "performance",
+        image: "/api/drive-image/1u9k_8aLRQ51Wfdm0x_dhTOj3yT_YF80t",
         imageSlider: [
-            "/api/drive-image/",
-            "/api/drive-image/",
-            "/api/drive-image/",
+            "/api/drive-image/1GSOTXoISz2rFR6EkmDvHxBIfFUORtEbn",
+            "/api/drive-image/1nLExFpAv-kO4vi72GxqFUp2-S8yTnS0c",
+            "/api/drive-image/1u9k_8aLRQ51Wfdm0x_dhTOj3yT_YF80t",
         ],
-        date: "Date: ",
-        venue: "",
-        description: ``,
-        mappingid: ""
+        date: "Date: 03-12-2023",
+        venue: "Undefined",
+        description: `On the occasion of the International Day of Persons with Disabilities, Team Unity presented a special Parai performance celebrating the strength, resilience and contributions of persons with disabilities. Through traditional folk art, the performance promoted awareness of inclusion, equality and respect for diversity.`,
+        mappingid: "03122023"
     },
 
     // UNKONOWN DATES
-    /*
+    
     {
-        ID: "",
-        image: "/api/drive-image/",
+        ID: "awarness",
+        image: "/api/drive-image/1IdGeXF-NW-qCASaBADevtkF6tbkKUeHA",
         imageSlider: [
-            "/api/drive-image/",
-            "/api/drive-image/",
-            "/api/drive-image/",
+            "/api/drive-image/16pjSFpnnaD22YTmS-d0og82Hysjx4U-N",
+            "/api/drive-image/1-AdSNeCwKvyG1BUVt1q_IEkrGr2RK9kL",
+            "/api/drive-image/18etqOKSq2YVdjpmt5NCJ1_0ompaExKxh",
         ],
-        date: "Date: ",
-        venue: "",
-        description: ``,
-        mappingid: ""
+        date: "Date: Na-Na-2023",
+        venue: "Undefined",
+        description: `In 2023, Team Unity collaborated with Saathi NGO to conduct a Vaccination Awareness Street Play as part of a community outreach initiative. The programme aimed to educate the public about the importance of vaccination, promote preventive healthcare and encourage vaccination across all age groups.`,
+        mappingid: "NaNa2023-1"
     },
 
     {
-        ID: "",
-        image: "/api/drive-image/",
+        ID: "performance",
+        image: "/api/drive-image/1Dx0p2dixsyfuAhYX29cH2p8ClQ3xMjae",
         imageSlider: [
-            "/api/drive-image/",
-            "/api/drive-image/",
-            "/api/drive-image/",
+            "/api/drive-image/1ywbv3940uOcreo12i6Vv3kuFfdhPtb3V",
+            "/api/drive-image/12RSX8OAPtkp35a4w1as_q92uCb4Vq_hB",
+            // "/api/drive-image/",
         ],
-        date: "Date: ",
-        venue: "",
-        description: ``,
-        mappingid: ""
+        date: "Date: Na-Na-2023",
+        venue: "Undefined",
+        description: `In 2023, Team Unity collaborated with Chinna Chiru Ulagam Welfare Trust to participate in a First Aid Training Programme conducted by Alert NGO. The programme focused on equipping participants with essential first aid knowledge and emergency response skills to provide immediate assistance during medical emergencies and accidents.`,
+        mappingid: "NaNa2023-2"
     },
 
     {
-        ID: "",
-        image: "/api/drive-image/",
+        ID: "awarness",
+        image: "/api/drive-image/18SzsvUWiZLGrbWF88WzU3WI7C00ksgih",
         imageSlider: [
-            "/api/drive-image/",
-            "/api/drive-image/",
-            "/api/drive-image/",
+            "/api/drive-image/15A6zVRjV5HB7rzqkdF0Z0t80j_y370PW",
+            "/api/drive-image/1DUw1lnkn9Ck4wsyrNRsmHjpisBLHYSMO",
+            "/api/drive-image/1_HtsjFm0gwk-s-dkHy4R7FtTNu6KlDPZ",
         ],
-        date: "Date: ",
-        venue: "",
-        description: ``,
-        mappingid: ""
+        date: "Date: Na-Na-2023",
+        venue: "CMBT Chennai",
+        description: `Team Unity collaborated with Koyambedu (CMBT) Police Station, Chennai, to present a Drug Awareness Mime Performance highlighting the harmful effects of drug abuse and promoting a drug-free society. Conducted in a busy public space, the performance aimed to reach a diverse audience and spread awareness about substance abuse prevention.`,
+        mappingid: "NaNa2023-3"
     },
-    */
+    
 ];
