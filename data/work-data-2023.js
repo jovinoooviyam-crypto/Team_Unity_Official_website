@@ -9,7 +9,7 @@ window.worksData2023 = [
         date: "04-06-2023",
         description: "Team Unity presented Parai and Oyil at FEETS Organization's World No Tobacco Day programme, promoting tobacco prevention and healthy living.",
         search: "04062023",
-    }.
+    },
 
     // OCT 2023
     
@@ -20,7 +20,7 @@ window.worksData2023 = [
         date: "07-10-2023",
         description: "For the third consecutive year, Team Unity collaborated with India Turns Pink at Meenambakkam International Airport, presenting mime and flashmob performances to promote breast cancer awareness and early detection.",
         search: "07102023",
-    }.
+    },
 
     {
         id: 3,
@@ -29,7 +29,7 @@ window.worksData2023 = [
         date: "16-10-2023",
         description: "Team Unity participated in a breast cancer awareness programme at Soka Ikeda College, promoting early detection and preventive healthcare",
         search: "16102023",
-    }.
+    },
 
     {
         id: 4,
@@ -38,7 +38,7 @@ window.worksData2023 = [
         date: "31-10-2023",
         description: "Team Unity was felicitated at the Namma Chennai Airport Turns Pink 2023 ceremony for its participation in promoting breast cancer awareness and preventive healthcare.",
         search: "31102023",
-    }.
+    },
 
     // NOV 2023
     /*
